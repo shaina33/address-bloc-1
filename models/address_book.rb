@@ -3,7 +3,6 @@ require "csv"
 require 'bloc_record/base'
 
 class AddressBook < BlocRecord::Base
-  attr_reader :entries
 
   def add_entry(name, phone_number, email)
       Entry.create(name: name, phone_number: phone, email: email, address_book_id: self.id)
@@ -17,6 +16,14 @@ class AddressBook < BlocRecord::Base
       row_hash = row.to_hash
       add_entry(row_hash["name"], row_hash["phone_number"], row_hash["email"])
     end
+  end
+  
+  def entries
+    Entry.where(address_book_id: self.id)
+  end
+  
+  def find_entry(name)
+    Entry.where(name: name, address_book_id: self.id).first
   end
 
 end
