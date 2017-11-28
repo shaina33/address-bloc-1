@@ -1,6 +1,6 @@
 require_relative 'entry'
 require "csv"
-require 'bloc_record/base'
+#require 'bloc_record/base'
 
 class AddressBook < BlocRecord::Base
 
@@ -23,7 +23,10 @@ class AddressBook < BlocRecord::Base
   end
   
   def find_entry(name)
-    Entry.where(name: name, address_book_id: self.id).first
+    # doesn't work
+    # Entry.where(name: name, address_book_id: self.id).first
+    # works, but doesn't depend on selection.rb#find_by
+    Entry.find_by("name", name)
   end
 
 end
