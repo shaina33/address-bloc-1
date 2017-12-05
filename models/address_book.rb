@@ -23,10 +23,14 @@ class AddressBook < BlocRecord::Base
   end
   
   def find_entry(name)
-    # doesn't work
-    # Entry.where(name: name, address_book_id: self.id).first
-    # works, but doesn't depend on selection.rb#find_by
-    Entry.find_by("name", name)
+    # given in checkpoint #4
+     Entry.where(name: name, address_book_id: self.id).first
+    
+    # use to test other methods
+    # Entry.find_by("name", name)
+    # Entry.find_by(:name, name)
+    # Entry.find_many_by("name", name)
+    # Entry.find_by_name(name)
   end
 
 end

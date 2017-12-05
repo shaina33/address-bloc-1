@@ -15,7 +15,11 @@ class MenuController
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
     puts "5 - Exit"
+    # for testing
+    puts "6 - Test"
+    
     print "Enter your selection: "
+    
 
     selection = gets.to_i
 
@@ -43,6 +47,11 @@ class MenuController
       when 5
         puts "Good-bye!"
         exit(0)
+      # for testing
+      when 6
+        system "clear"
+        test_function
+        main_menu
       else
         system "clear"
         puts "Sorry, that is not a valid input"
@@ -194,6 +203,39 @@ class MenuController
         puts entry.to_s
         search_submenu(entry)
     end
+  end
+  
+  def test_function
+    puts "No test function is currently active"
+    # print "testing input: "
+    # input = gets.chomp
+    # output = 'no output'
+    
+    # output = BlocRecord::Utility.camelCase(input)
+    
+    # Entry.find_each do |entry|
+    #   puts entry.name
+    # end
+    
+    # Entry.find_each(start: 2, batch_size: 4) do |entry|
+    #   puts entry.name
+    # end
+    
+    # Entry.find_in_batches(start: 3, batch_size: 2) do |entries, batch|
+    #   puts "New Batch, Number #{batch}"
+    #   entries.each{ |entry| puts entry.name }
+    # end
+    
+    # Entry.order(:name).each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
+    # Entry.order("name DESC").each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
+    # Entry.order("name ASC, phone_number DESC").each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
+    # Entry.order("name ASC", "phone_number DESC").each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
+    # Entry.order(:name, :phone_number).each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
+    # Entry.order(name: :asc, phone_number: :desc).each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
+    # Entry.order(:name, phone_number: :desc).each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
+    
+    # puts "output is: "
+    # puts output
   end
 end
 
