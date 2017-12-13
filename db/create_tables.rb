@@ -4,6 +4,7 @@ db = SQLite3::Database.new "db/address_bloc.sqlite"
 
 db.execute("DROP TABLE IF EXISTS address_book;");
 db.execute("DROP TABLE IF EXISTS entry;");
+db.execute("DROP TABLE IF EXISTS dog;");
 
 db.execute <<-SQL
     CREATE TABLE address_book (
@@ -20,5 +21,14 @@ db.execute <<-SQL
         phone_number VARCHAR(30),
         email VARCHAR(30),
         FOREIGN KEY (address_book_id) REFERENCES address_book(id)
+    );
+SQL
+
+db.execute <<-SQL 
+    CREATE TABLE dog (
+        id INTEGER PRIMARY KEY,
+        entry_id INTEGER
+        name VARCHAR(30),
+        FOREIGN KEY (entry_id) REFERENCES entry(id)
     );
 SQL

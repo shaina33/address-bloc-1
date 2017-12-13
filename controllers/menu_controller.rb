@@ -206,7 +206,7 @@ class MenuController
   end
   
   def test_function
-    puts "No test function is currently active"
+    # puts "No test function is currently active"
     # print "testing input: "
     # input = gets.chomp
     # output = 'no output'
@@ -233,6 +233,22 @@ class MenuController
     # Entry.order(:name, :phone_number).each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
     # Entry.order(name: :asc, phone_number: :desc).each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
     # Entry.order(:name, phone_number: :desc).each { |entry| puts "#{entry.name} / #{entry.phone_number}" }
+    
+    # people = { 1 => { "name" => "David" }, 2 => { "phone_number" => "123-456-0987" } }
+    # Entry.update(people.keys, people.values)
+    # main_menu
+    
+    # person = Entry.where(name: 'Jin').first
+    # person.update_name("Ginny")
+    # person.update_phone_number("222-333-4567")
+    # puts Entry.where(name: 'Ginny').first
+    
+    # AddressBook.join(entrys: :dog)
+    
+    # person = Entry.where(name: 'hi').take
+    # person = Entry.where(name: 'Sally').where(phone_number: '999-999-9999')
+     person = Entry.where(name: 'Sally').not(phone_number: '999-999-9999')
+     puts person
     
     # puts "output is: "
     # puts output
