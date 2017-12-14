@@ -247,8 +247,12 @@ class MenuController
     
     # person = Entry.where(name: 'hi').take
     # person = Entry.where(name: 'Sally').where(phone_number: '999-999-9999')
-     person = Entry.where(name: 'Sally').not(phone_number: '999-999-9999')
-     puts person
+    # person = Entry.where(name: 'Sally').not(phone_number: '999-999-9999')
+    # puts person
+    
+    # Entry.destroy(2,3)
+    # Entry.first.destroy
+    # Entry.destroy_all(name: 'Jane')
     
     # puts "output is: "
     # puts output
