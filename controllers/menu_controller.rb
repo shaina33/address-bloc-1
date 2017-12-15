@@ -8,7 +8,7 @@ class MenuController
   end
 
   def main_menu
-    puts "#{@address_book.name} Address Book Selected\n#{@address_book.entries.count} entries"
+    puts "'#{@address_book.name}' Address Book Selected\n#{@address_book.entries.count} entries"
     puts "0 - Switch AddressBook"
     puts "1 - View all entries"
     puts "2 - Create an entry"
@@ -144,6 +144,9 @@ class MenuController
       when "n"
       when "d"
         delete_entry(entry)
+        system "clear"
+        puts "#{entry.name} has been deleted"
+        main_menu
       when "e"
         edit_entry(entry)
         entry_submenu(entry)
@@ -158,8 +161,7 @@ class MenuController
   end
 
   def delete_entry(entry)
-    address_book.entries.delete(entry)
-    puts "#{entry.name} has been deleted"
+    Entry.destroy(entry.id)
   end
 
   def edit_entry(entry)
@@ -253,6 +255,10 @@ class MenuController
     # Entry.destroy(2,3)
     # Entry.first.destroy
     # Entry.destroy_all(name: 'Jane')
+    # Entry.destroy_all
+    # Entry.destroy_all("phone_number = '999-999-9999'")
+    # Entry.destroy_all("phone_number = ?", '111-111-1111')
+    # Entry.where(name: 'Sally').destroy_all
     
     # puts "output is: "
     # puts output
