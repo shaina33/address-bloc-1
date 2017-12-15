@@ -75,6 +75,7 @@ class MenuController
   def view_all_entries
     @address_book.entries.each do |entry|
       system "clear"
+      puts "Entry from #{entry.address_book.name}"
       puts entry.to_s
       entry_submenu(entry)
     end
