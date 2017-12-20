@@ -4,6 +4,7 @@ require "csv"
 
 class AddressBook < BlocRecord::Base
   has_many :entries
+  #has_one :entry
   
   def add_entry(name, phone_number, email)
       Entry.create(name: name, phone_number: phone_number, email: email, address_book_id: self.id)

@@ -261,6 +261,9 @@ class MenuController
     # Entry.destroy_all("phone_number = ?", '111-111-1111')
     # Entry.where(name: 'Sally').destroy_all
     
+     puts AddressBook.first.entry
+      
+    
     # puts "output is: "
     # puts output
   end
